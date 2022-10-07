@@ -8,8 +8,10 @@ const ContactList = () => {
   const filter = useSelector(state => state.filter);
   const dispatch = useDispatch();
 
-  const filteredArray = contacts.filter(el =>
-    el.name.toLowerCase().includes(filter.toLowerCase())
+  const filteredArray = contacts.filter(
+    el =>
+      el.name.toLowerCase().includes(filter.toLowerCase()) ||
+      el.number.toLowerCase().includes(filter.toLowerCase())
   );
 
   return (

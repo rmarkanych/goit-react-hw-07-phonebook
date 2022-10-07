@@ -41,7 +41,7 @@ export const contactsSlice = createSlice({
     },
     [addNewContact.fulfilled]: (state, action) => {
       state.isLoading = false;
-      state.items.unshift(action.payload);
+      state.items.push(action.payload);
     },
     [addNewContact.rejected]: (state, action) => {
       state.isLoading = false;
